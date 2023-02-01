@@ -7,6 +7,16 @@ import java.util.LinkedList;
 import java.util.Vector;
 
 public class Main {
+    // funcion reverse
+    public static String Reverse(String texto){
+        String resultado = "";
+        char caracter = 'a';
+        for (int i = texto.length(); i>0; i--){
+            caracter = texto.charAt(i-1);
+            resultado = resultado + caracter;
+        }
+        return resultado;
+    }
     // ejercicio 1 (mostrar vector string)
     public static void Ejercicio_1(String[] vector_cadenas){
         for (int i = 0 ; i < vector_cadenas.length ; i ++){
@@ -87,14 +97,28 @@ public class Main {
     }
     // metodo main
     public static void main(String[] args) {
+
+        // funcion reverse
+        String texto = "Esto es un texto de prueba";
+        String texto_reves = Reverse(texto);
+        System.out.println("Texto inicial: " + texto);
+        System.out.println("Texto al reves: " + texto_reves);
+        System.out.println();
+        System.out.println("=============================================================");
+        System.out.println();
+
         // ejercicio 1 (mostrar vector string)
         String[] palabras = {"hola mundo", "que tal", "teclado", "cafe"};
         Ejercicio_1(palabras);
+        System.out.println();
+        System.out.println("=============================================================");
         System.out.println();
 
         // ejercicio 2 (matriz de enteros)
         int[][] matriz = {{1,5,7},{25,57,14},{101,4,85}};
         Ejercicio_2(matriz);
+        System.out.println();
+        System.out.println("=============================================================");
         System.out.println();
 
         // ejercicio 3 (eliminar posiciones 2ª y 3ª)
@@ -106,6 +130,8 @@ public class Main {
         vector.add(4.00);
         vector.add(72.21);
         Ejercicio_3(vector);
+        System.out.println();
+        System.out.println("=============================================================");
         System.out.println();
 
         // ejercicio 4:
@@ -124,10 +150,15 @@ public class Main {
         // vuelco los datos a una linkedlist
         LinkedList<String> linkedCoches = new LinkedList<>(coches);
         Ejercicio_5(coches, linkedCoches);
+        System.out.println();
+        System.out.println("=============================================================");
+        System.out.println();
 
         // ejercicio 6 (arrayList de enteros)
         ArrayList<Integer> enteros = new ArrayList<>();
         Ejercicio_6(enteros);
+        System.out.println();
+        System.out.println("=============================================================");
         System.out.println();
 
         // ejercicio 7 (divide por cero)
@@ -140,6 +171,8 @@ public class Main {
             System.out.println("Demo de codigo.");
         }
         System.out.println();
+        System.out.println("=============================================================");
+        System.out.println();
 
         // ejercicio 8 (InputStream PrintStream)
         try{
@@ -149,5 +182,6 @@ public class Main {
         } catch (Exception e){
             e.printStackTrace();
         }
+        
     }
 }
