@@ -1,7 +1,7 @@
 package ejercicios;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Vector;
@@ -78,8 +78,12 @@ public class Main {
 
     // ejercicio 8 (InputStream PrintStream)
     public static void Ejercicio_8(InputStream fileIn, PrintStream fileOut){
-        
-        return fileOut;
+        try{
+            byte[] datos = fileIn.readAllBytes();
+            fileOut.writeBytes(datos);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
     // metodo main
     public static void main(String[] args) {
@@ -138,6 +142,12 @@ public class Main {
         System.out.println();
 
         // ejercicio 8 (InputStream PrintStream)
-
+        try{
+            InputStream loremipsum = new FileInputStream("ficheros/loremipsum.txt");
+            PrintStream loremipsum_copia = new PrintStream("ficheros/copia_loremipsum.txt");
+            Ejercicio_8(loremipsum, loremipsum_copia);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
